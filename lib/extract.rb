@@ -377,7 +377,7 @@ def procedure(name, anomaly_range)
     extracted = extract(bgps)
     t = DateTime.parse(File.basename(bgp_path))
     cluster = ''
-    if DateTime.parse(anomaly_range[:from]) <= t and t < DateTime.parse(anomaly_range[:to])
+    if DateTime.parse(anomaly_range[:from]) <= t and t <= DateTime.parse(anomaly_range[:to])
       cluster = 'anomaly'
     else
       cluster = 'regularity'
